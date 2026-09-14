@@ -1,69 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"content=" width=device-width,initial-scale=1.0">
-    <title>JARVIS MOBILE CONTROL</title>
-    <style>
-        body { 
-            background-color: #050505; 
-            color: #00ffff; 
-            font-family: 'Courier New', monospace; 
-            text-align: center; 
-            padding: 20px; 
-            margin: 0;
-       }
-       h1 { 
-           text-shadow: 0 0 10px #00ffff; 
-           margin-top: 20px;
-       }
-       .subtitle { color: #888; margin-bottom: 30px; }
-       .btn { 
-             display: block; 
-             width: 90%; 
-             max-width: 400px;
-             margin: 15px auto; 
-             padding: 25px; 
-             font-size: 18px; 
-             font-weight: bold; 
-             background: #00ffff; 
-             color: #000; 
-             border: none; 
-             border-radius: 15px; 
-             box-shadow: 0 0 20px #00ffff; 
-             cursor: pointer; 
-             transition: all 0.3s;
-       }
-       .btn:active { 
-           background: #ff0066; 
-           box-shadow: 0 0 20px #ff0066; 
-           color: white; 
-           ransform: scale(0.95);
-      }
-      .morning { 
-          background: #ff0066; 
-          color: white; 
-          box-shadow: 0 0 20px #ff0066; 
-     }
- </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>J.A.R.V.I.S</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1> JARVIS OS</h1>
-    <p class="subtitle">Mobile Command Center</p>
-
-    <button class="btn" onclick="send('youtube')"> OPEN YOUTUBE</button>
-    <button class="btn" onclick="send('google')"> OPEN GOOGLE</button>
-    <button class="btn" onclick="send('calculator')"> OPEN CALCULATOR</button>
-    <button class="btn morning" onclick="send('morning')"> GOOD MORNING SIR</button>
-
-    <script>
-        function send(action) {
-            fetch('/command/' + action)
-                .then(response => response.json())
-                .then(data => {
-                    alert(data.reply);
-                  });
-        }
-    </script>
+  <header><h1>J.A.R.V.I.S</h1><p>MOBILE EDITION</p></header>
+    
+ <div class="core">
+   <div class="ring r1"></div>
+   <div class="ring r2"></div>
+   <div class="center"></div>
+ </div>
+ <p class="core-text">CORE ACTIVE</p>
+    
+ <div class="status">
+   <h2>SYSTEM STATUS</h2>
+   <div class="row"><span>AI CORE</span><b class="on">● ONLINE</b></div>
+   <div class="row"><span>NETWORK</span><b class="on">● ONLINE</b></div>
+   <div class="row"><span>VOICE</span><b class="off">○ LOCKED</b></div>
+   <div class="row"><span>MEMORY</span><b class="off">○ LOCKED</b></div>
+  </div>
+    
+  <div class="chat" id="chat"></div>
+  <div class="input-area">
+    <input id="msg" placeholder="Ask J.A.R.V.I.S...">
+    <button id="send">SEND</button>
+  </div>
+    
+  <script src="script.js"></script>
 </body>
 </html>
