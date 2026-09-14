@@ -46,6 +46,7 @@ async function callGemini(prompt) {
 
                     headers: {
                         "Content-Type": "application/json"
+                     "x-goog-api-key": API_KEY
                     },
 
                     body: JSON.stringify({
