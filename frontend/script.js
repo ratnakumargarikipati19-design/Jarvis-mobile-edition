@@ -39,7 +39,8 @@ async function callGemini(prompt) {
             const res = await fetch(
                 "https://generativelanguage.googleapis.com/v1beta/models/" +
                 model +
-                ":generateContent?key"
+                ":generateContent?key=" +
+                encodURIConponent(API_KEY)
                 {
                     method: "POST",
 
